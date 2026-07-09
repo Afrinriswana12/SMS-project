@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Student</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .page{
+            display: flex;
+            min-height: 100vh;
+
+        }
+        .box1{
+            background-color: rgb(212, 188, 235);
+            width: 290px;
+            height: 1000px;
+        }
+        .box1 h1{
+            margin-left: 10px;
+            margin-bottom: 0px;
+            margin-top: 2px;
+        }
+        .box1 p{
+            margin: 0px;
+            margin-left: 10px;
+        }
+        
+        .box3{
+            margin-bottom: 25px;
+            
+            
+           
+
+
+        }
+        .box3 h3{
+            font-size: medium;
+            background-color: rgb(212, 188, 235) ;
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            padding-left: 45px;
+            padding-top: 10px;
+        }
+        .box1 button{
+            width: 250px;
+            height: 35px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(212, 188, 235);
+            color: red;
+            text-align: left;
+            margin-left: 10px;
+            padding-bottom: 20px;
+        }
+        
+        
+        .logo-section{
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            
+        }
+        .logo i{
+            font-size: 35px;
+            color: rgb(138, 27, 160);
+        }
+        .logo{
+            text-align: left;
+            margin-top: 20px;
+            
+        }
+        .text{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .box3:hover h3{
+            background-color: blueviolet;
+            color: #fff;
+            
+        }
+        .box3 i{
+            position: absolute;
+            left: 20px;
+            padding-top: 10px;
+        }
+        .box3:hover i{
+            color: #fff;
+        }
+        .btn-logo i{
+            color: red;
+            
+        }
+        .btn-logo{
+            display: flex;
+            flex-direction: row;
+            margin-top: 60px;
+        }
+        .btn-logo i{
+            padding-left: 16px;
+        }
+        .para{
+            
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            
+        }
+        .box2 h1{
+            padding: 20px;
+            padding-bottom: 3px;
+            
+            
+        }
+        .text1{
+            color: blue;
+        }
+        .box2 p{
+            padding-top: 0px;
+            
+            
+        }
+        .box4{
+            width: 70vw;
+            height: 900px;
+            
+            
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner-box{
+
+            width: 80%;
+            height: 100%;
+            border: 1px solid rgb(99, 97, 99);
+            border-radius: 10px;
+            transform: translateY(-50px);
+            margin-top: 50px;
+           
+
+            
+
+        }
+        .inner-box h2{
+            padding: 10px;
+        }
+        .field1 span{
+            color: red;
+        }
+        .input-group{
+            padding: 3px;
+        }
+        .input-group label{
+            
+            font-size: medium;
+            padding: 20px;
+            
+        }
+        .inputs{
+            margin-top: 3px;
+            padding: 20px;
+            
+            
+        }
+        .input-group select{
+            width: 260px;
+            height: 40px;
+            border-radius: 8px;
+        }
+        .input-group input{
+             width: 260px;
+             height: 40px;
+             border-radius: 8px;
+        }
+        .field{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .field2 span{
+            color: red;
+        }
+        .inputs1{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 5px;
+
+        }
+        .inputs1 input,label{
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+        }
+        .label-grp{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 15px;
+        }
+        .field3 span{
+            color: red;
+        }
+        .field3{
+           padding: 30px;
+           margin-left: 42px;
+        }
+        .field3 label{
+            margin-bottom: 20px;
+        }
+        textarea{
+            width: 600px;
+            height: 100px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .btn button{
+            width: 280px;
+            height: 50px;
+            text-align: center;
+            margin-left: 60px;
+            border: none;
+            background-color: rgb(224, 219, 219);
+            border-radius: 8px;
+            
+        }
+        .btn button:hover{
+            background-color: blueviolet;
+            color: #fff;
+        }
+        .std{
+            color: blue;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <div class="box1">
+            <div class="logo-section">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="text">
+            <h1>SMS</h1>
+            <p>Student Management System</p>
+            </div>
+
+            </div>
+
+            <div class="box3">
+                <i class="fa-regular fa-chart-bar"></i>
+                <h3>Dashboard</h3>
+
+            </div>
+            <div class="box3">
+                <i class="fa-solid fa-people-group"></i>
+                <h3>Students</h3>
+                
+            </div>
+            <div class="box3">
+                <i class="fa-solid fa-plus"></i>
+                <h3>Add Student</h3>
+                
+            </div>
+            <div class="box3">
+                <i class="fa-solid fa-building-columns"></i>
+                <h3>Departments</h3>
+                
+            </div>
+            <div class="box3">
+                <i class="fa-regular fa-file-lines"></i>
+                <h3>Reports</h3>
+                
+            </div>
+            <div class="box3">
+                <i class="fa-solid fa-user"></i>
+                <h3>Profile</h3>
+                
+            </div>
+            <div class="box3">
+                <i class="fa-solid fa-gear"></i>
+                <h3>Settings</h3>
+                
+            </div>
+            <div class="btn-logo">
+
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <button type="logout">Logout</button>
+
+            </div>
+        </div>
+
+        <div class="box2">
+            <h1>Add Student</h1>
+            <p class="para"><span class="text1"> Dashboard </span>  <span class="arrow"> > </span>   <span class="std">Students</span> <span class="arrow"> > </span>   <span>Add student</span></p>
+
+            <div class="box4">
+                <div class="inner-box">
+                <h2>Student Information</h2>
+
+                <div class="field">
+
+                <div class="field1">
+
+                    <div class="input-group">
+
+                    <label>Full Name <span>*</span></label>
+                    <br>
+                    <div class="inputs">
+                    <input type="text" id="name" placeholder="Enter Full Name">
+                    <br>
+                    </div>
+                    </div>
+
+                    <div class="input-group">
+
+                    <label>Department <span>*</span></label>
+                    <br>
+                    <div class="inputs">
+                    <select id="dept" required>
+                    <option value="" disabled selected> Select Department </option>
+                    <option value="cs"> Computer science </option>
+                    <option value="it"> Information Technology </option>
+                    <option value="ai"> Artificial Intelligence </option>
+                    <option value="ece"> Electronics & Communication </option>
+                </select>
+                    <br>
+                    </div>
+
+                    </div>
+
+                    <div class="input-group">
+
+                    <label>Year <span>*</span></label>
+                    <br>
+                    <div class="inputs">
+                    <select id="year" required>
+                    <option value="" disabled selected> Select Year </option>
+                    <option value="y1"> 2026 </option>
+                    <option value="y2"> 2027 </option>
+                    <option value="y3"> 2028 </option>
+                    <option value="y4"> 2029 </option>
+                </select>
+                    <br>
+                    </div>
+
+                    </div>
+
+                    
+                     <div class="input-group">
+                    <label>Phone Number <span>*</span></label>
+                    <br>
+                    <div class="inputs">
+                    <input type="text" id="phoneno" placeholder="Enter 10 digit phone number">
+                    <br>
+                    </div>
+                    </div>
+
+                </div>
+                <div class="field2">
+
+                    <div class="input-group">
+
+                    <label>Register Number <span>*</span></label>
+                    <br>
+                    <div class="inputs">
+                    <input type="text" id="regno" placeholder="Enter Register Number">
+                    <br>
+                    </div>
+                    </div>
+
+                    <div class="input-group">
+
+                    <label>Course <span>*</span></label>
+                    <br>
+                    <div class="inputs">
+                    <select id="course" required>
+                    <option value="" disabled selected> Select Course </option>
+                    <option value="fsd"> Full Stack Develoment </option>
+                    <option value="fe"> Frontend Develoment </option>
+                    <option value="ai&ml"> Artificial Intelligence & Macine Learning </option>
+                    <option value="be"> Backend Development </option>
+                </select>
+                    <br>
+                    </div>
+
+                    </div>
+
+                    
+                     <div class="input-group">
+                    <label>Email <span>*</span></label>
+                    <br>
+                    <div class="inputs">
+                    <input type="text" id="email" placeholder="Enter email">
+                    <br>
+                    </div>
+                    </div>
+
+                    <div class="input-group">
+                    <label>Gender <span>*</span></label>
+                    <br>
+                    <div class="inputs1">
+                    <label class="label-grp">
+                    <input type="radio" id="male" name="gender" value="male">
+                    Male
+                    </label>
+                    <label class="label-grp">
+                    <input type="radio" id="female" name="gender" value="female">
+                     Female
+                    </label>
+                    <label class="label-grp">
+                    <input type="radio" id="other" name="gender" value="other">
+                     Other
+                    </label>
+                    <br>
+                    </div>
+                    </div>
+
+
+                </div>
+                </div>
+                <div class="field3">
+                    <label>Address <span>*</span></label>
+                    <br>
+                    <textarea placeholder="Enter Address"></textarea>
+                </div>
+
+                <div class="btn">
+
+                <button type="update" onclick="updateStudent()">Update Student</button>
+                <button type="reset">Reset</button>
+
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        //put
+
+function updateStudent(){
+
+    let id =  document.getElementById("id").value;
+    let Student = {
+        id: parseInt(id),
+        name: document.getElementById("name").value,
+        regno: document.getElementById("regno").value,
+        department: document.getElementById("department").value,
+         email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value
+
+
+    };
+    console.log(Student);
+    fetch("http://localhost:8083/student1/"+id,{
+        method : "put",
+        headers:{
+            "Content-Type":"application/json"
+
+        },
+        body: JSON.stringify(Student)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        alert("updated");
+});
+    
+}
+    </script>
+    
+</body>
+</html>
