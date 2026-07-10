@@ -260,52 +260,44 @@
 
             </div>
 
-            <div class="box3">
+            <a class="box3" href="dashboard.html">
                 <i class="fa-regular fa-chart-bar"></i>
                 <h3>Dashboard</h3>
-
-            </div>
-            <div class="box3">
+            </a>
+            <a class="box3" href="students.html">
                 <i class="fa-solid fa-people-group"></i>
                 <h3>Students</h3>
-                
-            </div>
-            <div class="box3">
+            </a>
+            <a class="box3" href="addStudent.html">
                 <i class="fa-solid fa-plus"></i>
                 <h3>Add Student</h3>
-                
-            </div>
-            <div class="box3">
+            </a>
+            <a class="box3" href="departments.html">
                 <i class="fa-solid fa-building-columns"></i>
                 <h3>Departments</h3>
-                
-            </div>
-            <div class="box3">
+            </a>
+            <a class="box3" href="reports.html">
                 <i class="fa-regular fa-file-lines"></i>
                 <h3>Reports</h3>
-                
-            </div>
-            <div class="box3">
+            </a>
+            <a class="box3" href="profile.html">
                 <i class="fa-solid fa-user"></i>
                 <h3>Profile</h3>
-                
-            </div>
-            <div class="box3">
+            </a>
+            <a class="box3" href="settings.html">
                 <i class="fa-solid fa-gear"></i>
                 <h3>Settings</h3>
-                
-            </div>
+            </a>
             <div class="btn-logo">
-
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <button type="logout">Logout</button>
-
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <a class="logout-link" href="login.html">Logout</a>
             </div>
         </div>
 
         <div class="box2">
-            <h1>Add Student</h1>
-            <p class="para"><span class="text1"> Dashboard </span>  <span class="arrow"> > </span>   <span class="std">Students</span> <span class="arrow"> > </span>   <span>Add student</span></p>
+            <h1>Edit Student</h1>
+            <p class="para"><span class="text1"> Dashboard </span>  <span class="arrow"> > </span>   <span class="std">Students</span> <span class="arrow"> > </span>   <span>Edit student</span></p>
+            <p id="studentId" style="margin-left:42px;color:#4F46E5;font-weight:700"></p>
 
             <div class="box4">
                 <div class="inner-box">
@@ -330,12 +322,12 @@
                     <label>Department <span>*</span></label>
                     <br>
                     <div class="inputs">
-                    <select id="dept" required>
+                    <select id="department" required>
                     <option value="" disabled selected> Select Department </option>
-                    <option value="cs"> Computer science </option>
-                    <option value="it"> Information Technology </option>
-                    <option value="ai"> Artificial Intelligence </option>
-                    <option value="ece"> Electronics & Communication </option>
+                    <option value="CS"> Computer Science </option>
+                    <option value="IT"> Information Technology </option>
+                    <option value="AI"> Artificial Intelligence </option>
+                    <option value="ECE"> Electronics & Communication </option>
                 </select>
                     <br>
                     </div>
@@ -364,7 +356,7 @@
                     <label>Phone Number <span>*</span></label>
                     <br>
                     <div class="inputs">
-                    <input type="text" id="phoneno" placeholder="Enter 10 digit phone number">
+                    <input type="text" id="phone" placeholder="Enter 10 digit phone number">
                     <br>
                     </div>
                     </div>
@@ -435,53 +427,28 @@
                 <div class="field3">
                     <label>Address <span>*</span></label>
                     <br>
-                    <textarea placeholder="Enter Address"></textarea>
+                    <textarea id="address" placeholder="Enter Address"></textarea>
                 </div>
 
+                <div class="field3">
+    <label>Status <span>*</span></label><br>
+
+    <select id="status">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+    </select>
+</div>
+
                 <div class="btn">
-
-                <button type="update" onclick="updateStudent()">Update Student</button>
-                <button type="reset">Reset</button>
-
+                    <button id="updateButton" type="button">Update Student</button>
+                    <button type="reset">Reset</button>
                 </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <script>
-        //put
-
-function updateStudent(){
-
-    let id =  document.getElementById("id").value;
-    let Student = {
-        id: parseInt(id),
-        name: document.getElementById("name").value,
-        regno: document.getElementById("regno").value,
-        department: document.getElementById("department").value,
-         email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value
-
-
-    };
-    console.log(Student);
-    fetch("http://localhost:8083/student1/"+id,{
-        method : "put",
-        headers:{
-            "Content-Type":"application/json"
-
-        },
-        body: JSON.stringify(Student)
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        alert("updated");
-});
-    
-}
-    </script>
-    
+    <div id="toast" class="toast"></div>
+    <script src="common.js"></script>
+    <script src="editStudent.js"></script>
 </body>
 </html>

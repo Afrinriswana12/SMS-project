@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Student</title>
+  <title>Edit Student</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -16,30 +16,26 @@
       </div>
       <a class="nav-link" href="dashboard.html"><i class="fa-regular fa-chart-bar"></i> Dashboard</a>
       <a class="nav-link" href="students.html"><i class="fa-solid fa-people-group"></i> Students</a>
-      <a class="nav-link active" href="addStudent.html"><i class="fa-solid fa-plus"></i> Add Student</a>
+      <a class="nav-link" href="addStudent.html"><i class="fa-solid fa-plus"></i> Add Student</a>
       <a class="nav-link" href="departments.html"><i class="fa-solid fa-building-columns"></i> Departments</a>
       <a class="nav-link" href="reports.html"><i class="fa-regular fa-file-lines"></i> Reports</a>
       <a class="nav-link" href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
       <a class="nav-link" href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+      <a class="nav-link active" href="edit.html"><i class="fa-solid fa-pen-to-square"></i> Edit Student</a>
       <a class="nav-link" href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
     </aside>
     <main class="main-content">
       <div class="page-header">
         <div>
-          <h1 class="page-title">Add Student</h1>
-          <p class="page-description">Capture new student details quickly with a clean responsive form.</p>
+          <h1 class="page-title">Edit Student</h1>
+          <p class="page-description">Update student details quickly and safely.</p>
         </div>
-        <a class="primary-btn" href="students.html"><i class="fa-solid fa-arrow-left"></i> Student List</a>
+        <a class="primary-btn" href="students.html"><i class="fa-solid fa-arrow-left"></i> Back to List</a>
       </div>
-
       <div class="card-grid">
-        <div class="card"><p class="card-title">Form Status</p><p class="card-value">Complete all required fields</p></div>
-        <div class="card">
-    <p class="card-title">Total Students</p>
-    <p class="card-value" id="totalStudents">0</p>
-</div>
+        <div class="card"><p class="card-title">Student ID</p><p id="studentId" class="card-value">#N/A</p></div>
+        <div class="card"><p class="card-title">Status</p><p id="editStatus" class="card-value">Loading...</p></div>
       </div>
-
       <form id="studentForm" class="page-card">
         <div class="field-grid">
           <div class="field-group">
@@ -53,7 +49,7 @@
           <div class="field-group">
             <label for="department">Department</label>
             <select id="department" class="select-field" required>
-              <option value="" disabled selected>Select department</option>
+              <option value="" disabled>Select department</option>
               <option value="CS">Computer Science</option>
               <option value="IT">Information Technology</option>
               <option value="AI">Artificial Intelligence</option>
@@ -63,7 +59,7 @@
           <div class="field-group">
             <label for="course">Course</label>
             <select id="course" class="select-field" required>
-              <option value="" disabled selected>Select course</option>
+              <option value="" disabled>Select course</option>
               <option value="fsd">Full Stack Development</option>
               <option value="fe">Frontend Development</option>
               <option value="ai&ml">Artificial Intelligence & ML</option>
@@ -71,12 +67,11 @@
             </select>
           </div>
         </div>
-
         <div class="field-grid">
           <div class="field-group">
             <label for="year">Year</label>
             <select id="year" class="select-field" required>
-              <option value="" disabled selected>Select year</option>
+              <option value="" disabled>Select year</option>
               <option value="y1">2026</option>
               <option value="y2">2027</option>
               <option value="y3">2028</option>
@@ -99,7 +94,6 @@
             </select>
           </div>
         </div>
-
         <div class="field-grid">
           <div class="field-group" style="grid-column: 1 / -1;">
             <label>Gender</label>
@@ -114,17 +108,15 @@
             <textarea id="address" class="input-field" placeholder="Enter address" required style="min-height:140px"></textarea>
           </div>
         </div>
-
         <div style="display:flex;justify-content:flex-end;gap:14px;flex-wrap:wrap;margin-top:8px;">
           <button type="reset" class="page-btn">Reset</button>
-          <button id="saveButton" type="button" class="primary-btn">Save Student</button>
+          <button id="updateButton" type="button" class="primary-btn">Update Student</button>
         </div>
       </form>
     </main>
   </div>
-
   <div id="toast" class="toast"></div>
   <script src="common.js"></script>
-  <script src="addStudent.js"></script>
+  <script src="editStudent.js"></script>
 </body>
 </html>

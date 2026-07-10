@@ -182,28 +182,17 @@
             document.getElementById("footer").innerHTML = `Already have an account ? 
             <span class="link" onclick="showLogin()"> Login </span>`;
 
-            document,getElementById("form").reset();
-            
-
-
+            document.getElementById("form").reset();
         }
         function showLogin(){
-
             registerForm = false;
-
             document.getElementById("subtitle").innerHTML = "Welcome back! Please login to your account.";
             document.getElementById("btn").innerHTML = "Login";
-            
-            document.getElementById("name-input").style.display="none";
-
-            document.getElementById("footer").innerHTML = `Don't have an account? 
-            <span class="link" onclick="showRegister()"> Register </span>`;
-
-            document,getElementById("form").reset();
-
-
+            document.getElementById("name-input").style.display = "none";
+            document.getElementById("footer").innerHTML = `Don't have an account? <span class="link" onclick="showRegister()">Register</span>`;
+            document.getElementById("form").reset();
         }
-        document.getElementById("form").addEventListener("submit",function(e){
+        document.getElementById("form").addEventListener("submit", function(e){
             e.preventDefault();
 
              nameError.innerHTML = "";
@@ -263,10 +252,10 @@
                 else{
                     const user = JSON.parse(localStorage.getItem("user"));
 
-                    if(user && email === user.email && password === user.password){
+                    if (user && email === user.email && password === user.password) {
                         alert("Login Successful");
-                    }
-                    else{
+                        window.location.href = 'dashboard.html';
+                    } else {
                         alert("Invalid Credentials");
                     }
                 }
